@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>หลักสูตรแกนกลาง — เชื่อมโยงความต้องการอุตสาหกรรม</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --soft: #f8fafc;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --blue: #0369a1;
+      --blue-soft: #e0f2fe;
+      --green: #15803d;
+      --green-soft: #dcfce7;
+      --purple: #6d28d9;
+      --purple-soft: #ede9fe;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --rose: #be123c;
+      --rose-soft: #ffe4e6;
+      --industry: #0f766e;
+      --industry-soft: #ccfbf1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "IBM Plex Sans Thai", system-ui, sans-serif;
+      background: var(--soft);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 40px rgba(15, 23, 42, 0.07);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f766e 0%, #0369a1 45%, #4338ca 100%);
+      color: #fff;
+      padding: 2rem 2.5rem 1.75rem;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.55rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+      font-weight: 700;
+      line-height: 1.28;
+      max-width: 720px;
+    }
+
+    .hero .en {
+      margin-top: 0.35rem;
+      font-size: 0.88rem;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+
+    .hero .sub {
+      margin-top: 0.55rem;
+      font-size: 0.92rem;
+      opacity: 0.92;
+      max-width: 760px;
+    }
+
+    .kpis {
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .kpi {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 10px;
+      padding: 0.5rem 0.8rem;
+      text-align: center;
+      min-width: 68px;
+    }
+
+    .kpi strong { display: block; font-size: 1.15rem; font-weight: 700; line-height: 1.1; }
+    .kpi span { font-size: 0.66rem; opacity: 0.9; }
+
+    .theme-quote {
+      margin-top: 1rem;
+      background: rgba(255,255,255,0.1);
+      border-left: 4px solid #5eead4;
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      max-width: 920px;
+    }
+
+    .body { padding: 1.5rem 2.5rem 2rem; display: grid; gap: 1.35rem; }
+
+    .section-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    /* Interview insight */
+    .insight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .insight-grid { grid-template-columns: 1fr; }
+      .hero, .body { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+
+    .insight-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      background: var(--industry-soft);
+      border-color: #99f6e4;
+    }
+
+    .insight-card h2 {
+      font-size: 0.95rem;
+      color: var(--industry);
+      margin-bottom: 0.5rem;
+    }
+
+    .insight-card blockquote {
+      font-size: 0.86rem;
+      color: var(--text);
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .insight-meta {
+      margin-top: 0.65rem;
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
+    .chain-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      background: var(--bg);
+    }
+
+    .chain-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .chain-node {
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      text-align: center;
+      min-width: 88px;
+    }
+
+    .chain-node.need { background: var(--industry-soft); border-color: #5eead4; color: #115e59; }
+    .chain-node.comp { background: var(--purple-soft); border-color: #c4b5fd; color: var(--purple); }
+    .chain-node.mod { background: var(--blue-soft); border-color: #7dd3fc; color: var(--blue); }
+    .chain-node.out { background: var(--green-soft); border-color: #86efac; color: var(--green); }
+
+    .chain-arrow { color: var(--muted); font-size: 0.9rem; }
+
+    /* 4 pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.65rem;
+    }
+
+    @media (max-width: 960px) { .pillars { grid-template-columns: 1fr 1fr; } }
+
+    .pillar {
+      border-radius: 12px;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+    }
+
+    .pillar h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .pillar .needs { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.45rem; }
+    .pillar ul { list-style: none; font-size: 0.76rem; display: grid; gap: 0.25rem; }
+    .pillar li::before { content: "→ "; color: var(--muted); }
+
+    .p-understand { background: var(--blue-soft); }
+    .p-design { background: var(--purple-soft); }
+    .p-build { background: var(--green-soft); }
+    .p-govern { background: var(--amber-soft); }
+
+    /* Mapping table */
+    .mapping-wrap {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    table.mapping {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.76rem;
+    }
+
+    table.mapping th {
+      background: var(--soft);
+      font-weight: 700;
+      text-align: left;
+      padding: 0.55rem 0.65rem;
+      border-bottom: 2px solid var(--border);
+      font-size: 0.72rem;
+      letter-spacing: 0.03em;
+    }
+
+    table.mapping td {
+      padding: 0.5rem 0.65rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    table.mapping tr:last-child td { border-bottom: none; }
+    table.mapping tr:hover td { background: #fafbfc; }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      margin: 0.1rem 0.15rem 0.1rem 0;
+      white-space: nowrap;
+    }
+
+    .tag-need { background: var(--industry-soft); color: #115e59; }
+    .tag-mod { background: var(--blue-soft); color: var(--blue); }
+    .tag-sk { background: var(--purple-soft); color: var(--purple); }
+    .tag-del { background: var(--amber-soft); color: var(--amber); }
+
+    /* Bottom grid */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) { .bottom-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+    }
+
+    .card h2 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.65rem; }
+
+    .modules {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .mod-row {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      gap: 0.55rem;
+      align-items: start;
+      padding: 0.55rem 0.6rem;
+      border-radius: 8px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+    }
+
+    .mod-id {
+      font-weight: 700;
+      font-size: 0.72rem;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 6px;
+      text-align: center;
+      padding: 0.25rem 0;
+    }
+
+    .mod-id.m2 { background: var(--purple); }
+    .mod-id.m3 { background: var(--green); }
+    .mod-id.m4 { background: var(--amber); }
+
+    .mod-row strong { display: block; font-size: 0.82rem; }
+    .mod-row span { color: var(--muted); font-size: 0.74rem; }
+
+    .mod-out {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .cases { display: grid; gap: 0.45rem; }
+
+    .case {
+      padding: 0.55rem 0.65rem;
+      border-radius: 8px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      font-size: 0.76rem;
+    }
+
+    .case strong { color: var(--rose); font-size: 0.78rem; }
+
+    .sk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 600px) { .sk-grid { grid-template-columns: 1fr; } }
+
+    .sk-item {
+      font-size: 0.72rem;
+      padding: 0.4rem 0.5rem;
+      border-radius: 6px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+    }
+
+    .sk-item b { color: var(--purple); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 0.85rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.74rem;
+      color: var(--muted);
+      background: var(--soft);
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; border: none; }
+    }
+
+    /* Journey from interview */
+    .journey-steps {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 1000px) {
+      .journey-steps { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .journey-steps { grid-template-columns: 1fr 1fr; }
+    }
+
+    .j-step {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.55rem;
+      background: var(--bg);
+      font-size: 0.72rem;
+      position: relative;
+    }
+
+    .j-step .num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--industry);
+      margin-bottom: 0.25rem;
+    }
+
+    .j-step strong {
+      display: block;
+      font-size: 0.78rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .j-step .cur {
+      color: var(--blue);
+      font-weight: 600;
+      margin-top: 0.35rem;
+      padding-top: 0.35rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .j-step .need-tags { margin-top: 0.3rem; }
+
+    /* Interview quote grid */
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.55rem;
+    }
+
+    @media (max-width: 960px) { .quote-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .quote-grid { grid-template-columns: 1fr; } }
+
+    .quote-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.7rem;
+      background: var(--soft);
+      font-size: 0.74rem;
+    }
+
+    .quote-card .q-id {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--industry);
+      margin-bottom: 0.2rem;
+    }
+
+    .quote-card .q-text {
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+      line-height: 1.45;
+    }
+
+    .quote-card .q-link {
+      font-size: 0.68rem;
+      color: var(--muted);
+      padding-top: 0.35rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .quote-card .q-link strong { color: var(--blue); }
+
+    /* Heatmap */
+    .heatmap-wrap { overflow-x: auto; }
+
+    table.heatmap {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.72rem;
+      min-width: 520px;
+    }
+
+    table.heatmap th, table.heatmap td {
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.45rem;
+      text-align: center;
+    }
+
+    table.heatmap th {
+      background: var(--soft);
+      font-weight: 700;
+    }
+
+    table.heatmap td.need-label {
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    table.heatmap .on {
+      background: var(--industry-soft);
+      color: #115e59;
+      font-weight: 700;
+    }
+
+    table.heatmap .off { color: #cbd5e1; }
+
+    /* Mermaid */
+    .mermaid-box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      background: var(--bg);
+      overflow-x: auto;
+    }
+
+    .mermaid { display: flex; justify-content: center; }
+
+    /* Competency bridge */
+    table.comp-bridge {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.74rem;
+    }
+
+    table.comp-bridge th, table.comp-bridge td {
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.55rem;
+      vertical-align: top;
+    }
+
+    table.comp-bridge th { background: var(--soft); font-weight: 700; }
+
+    .col-gate { font-size: 0.68rem; color: var(--muted); }
+
+    /* Hackathon-driven banner */
+    .hackathon-banner {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-left: 4px solid #fbbf24;
+      border-radius: 0 10px 10px 0;
+      padding: 0.85rem 1rem;
+    }
+
+    .hackathon-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: #fbbf24;
+      color: #78350f;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .hackathon-banner p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .pedagogy-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.6rem;
+    }
+
+    @media (max-width: 900px) { .pedagogy-strip { grid-template-columns: 1fr 1fr; } }
+
+    .ped-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 0.8rem;
+      background: var(--bg);
+      font-size: 0.76rem;
+    }
+
+    .ped-item.featured {
+      background: var(--amber-soft);
+      border-color: #fcd34d;
+    }
+
+    .ped-item .ped-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--amber);
+      margin-bottom: 0.25rem;
+    }
+
+    .ped-item strong { display: block; font-size: 0.82rem; margin-bottom: 0.2rem; }
+    .ped-item span { color: var(--muted); font-size: 0.72rem; }
+
+    /* PLO block in hero */
+    .plo-section {
+      margin-top: 0.85rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+
+    @media (max-width: 760px) {
+      .plo-section { grid-template-columns: 1fr; }
+    }
+
+    .plo-item {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 10px;
+      padding: 0.75rem 0.85rem;
+      font-size: 0.82rem;
+      line-height: 1.48;
+    }
+
+    .plo-num {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+      margin-bottom: 0.4rem;
+    }
+
+    .plo-item strong { font-weight: 600; }
+
+    .splo-strip {
+      margin-top: 0.65rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 760px) {
+      .splo-strip { grid-template-columns: 1fr; }
+    }
+
+    .splo-col {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 10px;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.74rem;
+      line-height: 1.45;
+    }
+
+    .splo-col h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      opacity: 0.95;
+    }
+
+    .splo-col ol {
+      margin: 0;
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .splo-col li span { opacity: 0.85; font-size: 0.7rem; }
+  </style>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "neutral", flowchart: { curve: "basis" } });
+  </script>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="badge">Consortium Human2 กลุ่ม 4.7, หลักสูตรแกนกลาง Non-Degree 69, Future human capital (5.0)</div>
+          <h1>การผสานมนุษย์กับ AI เพื่อพัฒนาโซลูชันดิจิทัลสำหรับองค์กร</h1>
+          <p class="en">Human and AI Integration for Enterprise Digital Solutions</p>
+          <p class="sub">หลักสูตร Upskill/Reskill แบบ <strong>Hackathon-Driven</strong> — เริ่มจาก Hackathon สัปดาห์ 1 ล็อกโจทย์จาก org ต้นสังกัด แล้วพัฒนาต่อเนื่องจนส่งมอบ<strong>โซลูชันดิจิทัลที่ใช้งานได้จริงบนบริบท org</strong> ผ่าน Gate 4 ขั้น ได้ Credential ตรวจสอบได้</p>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><strong>285</strong><span>ชั่วโมง</span></div>
+          <div class="kpi"><strong>22</strong><span>สัปดาห์</span></div>
+          <div class="kpi"><strong>4</strong><span>โมดูล</span></div>
+          <div class="kpi"><strong>40</strong><span>คน/รุ่น</span></div>
+          <div class="kpi"><strong>≥50%</strong><span>WIL</span></div>
+        </div>
+      </div>
+      <div class="theme-quote">
+        <strong>Main Theme — Human and AI Integration:</strong> ออกแบบและพัฒนาโซลูชันดิจิทัลโดยผสาน AI กับมนุษย์อย่างปลอดภัย ตรวจสอบได้ และรับผิดชอบต่อผู้มีส่วนได้ส่วนเสีย — เริ่มจาก Hackathon สัปดาห์ที่ 1 บนโจทย์องค์กรต้นสังกัด
+      </div>
+      <div class="hackathon-banner">
+        <span class="hackathon-tag">Hackathon-Driven</span>
+        <p>
+          <strong>สป. 1 เปิดรุ่นด้วย Hackathon Onsite</strong> — ผู้เรียนนำเสนอ Individual Launch Pitch โจทย์จาก org ต้นสังกัด รับ feedback จาก mentor หอการค้าจังหวัด แล้วขับเคลื่อน Org Capstone 22 สัปดาห์จนส่งมอบ<strong>โซลูชันดิจิทัลที่ deploy ได้จริง</strong> (MVP URL → Production → Demo Day)
+        </p>
+      </div>
+      <div class="plo-section">
+        <div class="plo-item">
+          <span class="plo-num">PLO 1</span>
+          <p><strong>ออกแบบ พัฒนา และส่งมอบ</strong>โซลูชันดิจิทัลที่ผสานปัญญาประดิษฐ์ (AI) สำหรับองค์กร <strong>โดย</strong>กำหนดจุดควบคุมความเสี่ยงและการตรวจทานโดยมนุษย์ในงานที่มีความเสี่ยงสูง ให้ปลอดภัยและตรวจสอบย้อนกลับได้</p>
+        </div>
+        <div class="plo-item">
+          <span class="plo-num">PLO 2</span>
+          <p><strong>กำกับดูแลและประเมิน</strong>การใช้ปัญญาประดิษฐ์ (AI Governance) ในโครงงานองค์กรอย่างมีจริยธรรม ร่วมกับผู้มีส่วนได้ส่วนเสีย และสื่อสารผลกระทบเชิงธุรกิจพร้อมแนวทางปฏิบัติที่รับผิดชอบได้</p>
+        </div>
+      </div>
+      <div class="splo-strip">
+        <div class="splo-col">
+          <h3>PLO 1 — ออกแบบ พัฒนา ส่งมอบโซลูชันดิจิทัล + AI</h3>
+          <ol>
+            <li><strong>1.1</strong> วิเคราะห์ปัญหาและออกแบบกระบวนการทำงานร่วมระหว่างมนุษย์และ AI <span>(Design-Ready)</span></li>
+            <li><strong>1.2</strong> พัฒนาผลิตภัณฑ์ต้นแบบที่มีฟังก์ชันจำเป็นขั้นต่ำ — MVP Full-stack <span>(MVP-Ready)</span></li>
+            <li><strong>1.3</strong> บูรณาการระบบ AI ควบคุมคุณภาพ และประเมินความเสี่ยง <span>(AI-Integrated)</span></li>
+            <li><strong>1.4</strong> ติดตั้งระบบและนำเสนอผลงานสู่สาธารณะ — Demo Day <span>(Launch-Ready)</span></li>
+          </ol>
+        </div>
+        <div class="splo-col">
+          <h3>PLO 2 — กำกับดูแล AI Governance</h3>
+          <ol>
+            <li><strong>2.1</strong> บริหารจัดการโครงงานในรูปแบบ Agile และร่วมขับเคลื่อนกลุ่มเรียนรู้ (Cohort)</li>
+            <li><strong>2.2</strong> ดำเนินงานตามรอบวงจร Sprint และสะท้อนคิดเพื่อการพัฒนา</li>
+            <li><strong>2.3</strong> ประเมินจริยธรรมปัญญาประดิษฐ์และวางกรอบการกำกับดูแล (Risk Memo)</li>
+            <li><strong>2.4</strong> สื่อสารผลกระทบเชิงธุรกิจและตอบคำถามการกำกับดูแลต่อคณะกรรมการ</li>
+          </ol>
+        </div>
+      </div>
+    </header>
+
+    <main class="body">
+      <!-- Pedagogy: Hackathon first -->
+      <section>
+        <div class="section-title">รูปแบบการเรียน — Hackathon-Driven + Org Capstone</div>
+        <div class="pedagogy-strip">
+          <div class="ped-item featured">
+            <div class="ped-label">จุดเริ่มต้น</div>
+            <strong>Hackathon สป. 1</strong>
+            <span>Onsite, Individual Launch Pitch, โจทย์ org จริง, mentor Q&amp;A, Problem Statement</span>
+          </div>
+          <div class="ped-item">
+            <div class="ped-label">60 ชม.</div>
+            <strong>Flipped Skill Set</strong>
+            <span>อาจารย์ + คู่มือ SK1–SK8, Workshop ตาม Needs จากสัมภาษณ์</span>
+          </div>
+          <div class="ped-item">
+            <div class="ped-label">165 ชม.</div>
+            <strong>Org Capstone (WIL)</strong>
+            <span>build, test, deploy บนบริบท org ต้นสังกัดทุกสัปดาห์</span>
+          </div>
+          <div class="ped-item">
+            <div class="ped-label">60 ชม.</div>
+            <strong>Clinic และ Gate</strong>
+            <span>mentor หอการค้าจังหวัด ตรวจงาน 4 ครั้ง ก่อน Credential</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interview + chain -->
+      <section>
+        <div class="section-title">เชื่อมโยงความต้องการอุตสาหกรรมกับหลักสูตร</div>
+        <div class="insight-grid">
+          <div class="insight-card">
+            <h2>เสียงจากภาคอุตสาหกรรม</h2>
+            <blockquote>
+              「ในแต่ละวัน AI Collaboration Specialist ต้องทำงานอะไรบ้าง — ตั้งแต่รับโจทย์จากลูกค้าจนส่งมอบงาน ใช้เครื่องมืออะไร วัดผลสำเร็จจากอะไร」
+            </blockquote>
+            <p class="insight-meta">
+              แหล่งข้อมูล: สัมภาษณ์ตัวแทนอุตสาหกรรม (คุณปวริศ), Workshop MHESI 29–30 พ.ค. 2569, Worksheet Stakeholder Needs Analysis, บทบาท AI Collaboration Specialist
+            </p>
+          </div>
+          <div class="chain-card">
+            <div class="section-title" style="margin-bottom:0.75rem">Logic การออกแบบหลักสูตร</div>
+            <div class="chain-flow">
+              <span class="chain-node need">Needs อุตสาหกรรม<br>N1–N12</span>
+              <span class="chain-arrow">→</span>
+              <span class="chain-node comp">สมรรถนะ<br>C1–C8</span>
+              <span class="chain-arrow">→</span>
+              <span class="chain-node mod">4 โมดูล<br>SK1–SK8</span>
+              <span class="chain-arrow">→</span>
+              <span class="chain-node out">PLO วัดได้<br>+ Credential</span>
+            </div>
+            <p style="margin-top:0.75rem;font-size:0.76rem;color:var(--muted)">
+              หลักสูตรไม่เพิ่มรายวิชาแยกตาม keyword แต่ฝัง Needs ใน deliverable ที่มีอยู่แล้ว (Design-Ready, MVP-Ready, AI-Integrated, Launch-Ready) เพื่อคง 285 ชม. และวัดผลได้ตาม OBE
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey: interview workflow → curriculum -->
+      <section>
+        <div class="section-title">วงจรงานจากบทสัมภาษณ์ → หลักสูตรตอบอย่างไร (6 ขั้น)</div>
+        <div class="journey-steps">
+          <div class="j-step">
+            <div class="num">ขั้น 1, สป.1 — Hackathon-Driven</div>
+            <strong>รับโจทย์และ Pitch โจทย์ org</strong>
+            Hackathon Onsite, แกะปัญหาจริงก่อนใส่ AI
+            <div class="need-tags"><span class="tag tag-need">N1</span></div>
+            <div class="cur">→ Individual Launch Pitch, Problem Statement, SK1/SK7</div>
+          </div>
+          <div class="j-step">
+            <div class="num">ขั้น 2, สป.3–6</div>
+            <strong>วาด workflow ก่อนสร้างระบบ</strong>
+            Miro/FigJam, แบ่งงานคนกับ AI
+            <div class="need-tags"><span class="tag tag-need">N1</span><span class="tag tag-need">N2</span><span class="tag tag-need">N3</span></div>
+            <div class="cur">→ M1 Design-Ready, Gate 1</div>
+          </div>
+          <div class="j-step">
+            <div class="num">ขั้น 3, สป.7–10</div>
+            <strong>พัฒนาและ deploy</strong>
+            สร้างระบบจาก Spec, ทดสอบ prompt
+            <div class="need-tags"><span class="tag tag-need">N4</span></div>
+            <div class="cur">→ M2 MVP-Ready, Gate 2</div>
+          </div>
+          <div class="j-step">
+            <div class="num">ขั้น 4, สป.11–13</div>
+            <strong>ฝัง AI และเปรียบเทียบ model</strong>
+            GPT-4o, Claude, Gemini + rubric
+            <div class="need-tags"><span class="tag tag-need">N5</span><span class="tag tag-need">N4</span></div>
+            <div class="cur">→ M3 AI feature, Dashboard</div>
+          </div>
+          <div class="j-step">
+            <div class="num">ขั้น 5, สป.14–16</div>
+            <strong>ควบคุมคุณภาพและจริยธรรม</strong>
+            QA สุ่มตรวจ, SLA, 「ทำแบบนี้ไม่ได้」
+            <div class="need-tags"><span class="tag tag-need">N6</span><span class="tag tag-need">N7</span><span class="tag tag-need">N10</span><span class="tag tag-need">N11</span></div>
+            <div class="cur">→ AI Risk Memo, Gate 3</div>
+          </div>
+          <div class="j-step">
+            <div class="num">ขั้น 6, สป.17–22</div>
+            <strong>ส่งมอบโซลูชันดิจิทัลที่ใช้งานได้จริงบนบริบท org</strong>
+            Production deploy, UAT, KPI 4 ตัว, Demo Day
+            <div class="need-tags"><span class="tag tag-need">N8</span><span class="tag tag-need">N9</span><span class="tag tag-need">N12</span></div>
+            <div class="cur">→ Impact Brief, Demo Day, Credential</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Constructive alignment mermaid -->
+      <section>
+        <div class="section-title">Constructive Alignment — จากสัมภาษณ์ถึงหลักฐานผู้เรียน</div>
+        <div class="mermaid-box">
+          <pre class="mermaid">
+flowchart LR
+  classDef n fill:#CCFBF1,stroke:#0f766e,color:#0f172a
+  classDef plo fill:#DBEAFE,stroke:#2563eb,color:#0f172a
+  classDef mid fill:#FEF3C7,stroke:#d97706,color:#0f172a
+  classDef art fill:#DCFCE7,stroke:#16a34a,color:#0f172a
+
+  INT["สัมภาษณ์อุตสาหกรรม<br/>AI Collaboration Specialist"]
+  NEED["Needs N1-N12"]
+  C["สมรรถนะ C1-C8"]
+  MOD["4 โมดูล M1-M4<br/>SK1-SK8"]
+  GATE["Gate 4 ขั้น<br/>rubric ≥ 70%"]
+  ART["หลักฐาน<br/>Workflow Brief, MVP URL<br/>QA Log, Risk Memo<br/>Impact Brief"]
+
+  INT --> NEED --> C --> MOD --> GATE --> ART
+
+  class INT,NEED n
+  class C plo
+  class MOD,GATE mid
+  class ART art
+          </pre>
+        </div>
+      </section>
+
+      <!-- 12 interview quotes -->
+      <section>
+        <div class="section-title">12 ความต้องการจากบทสัมภาษณ์ — คำพูดต้นฉบับและจุดเชื่อมในหลักสูตร</div>
+        <div class="quote-grid">
+          <div class="quote-card">
+            <div class="q-id">N1 Process Mapping</div>
+            <div class="q-text">「ใช้ Miro/FigJam วาด workflow diagram ก่อนออกแบบระบบ」</div>
+            <div class="q-link">หลักสูตร: <strong>M1 สป.3–5</strong>, SK1, Persona/Journey/AS-IS</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N2 Task Allocation</div>
+            <div class="q-text">「Task Allocation Matrix 4 ด้าน: Complexity, Risk, Data Sensitivity, Judgment Required」</div>
+            <div class="q-link">หลักสูตร: <strong>M1 สป.5</strong>, SK2, Human-AI Workflow Brief</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N3 HITL</div>
+            <div class="q-text">「Risk หรือ Judgment สูง → ต้องเป็น HITL ทุกครั้ง — ไม่ให้ตรวจเป็นพิธีกรรม」</div>
+            <div class="q-link">หลักสูตร: <strong>M1, M3</strong>, SK2/SK6, กรณีธนาคารสินเชื่อ</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N4 Prompt Engineering</div>
+            <div class="q-text">「5 องค์ประกอบ: Role, Context, Task, Format, Constraints — ทดสอบก่อน deploy」</div>
+            <div class="q-link">หลักสูตร: <strong>M1–M2</strong>, SK4, Prompt log</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N5 Multi-Model Eval</div>
+            <div class="q-text">「ทดสอบ GPT-4o, Claude, Gemini ด้วย test case 20 ชุด」</div>
+            <div class="q-link">หลักสูตร: <strong>M3 สป.12</strong>, SK4/SK5, AI Quality Log</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N6 Quality Monitoring</div>
+            <div class="q-text">「สุ่มตรวจ ≥10% output/วัน ด้วย QA Checklist 8 ข้อ」</div>
+            <div class="q-link">หลักสูตร: <strong>M3</strong>, SK5, QA log ในโปรเจกต์ org</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N7 Error and SLA</div>
+            <div class="q-text">「Critical ≤2 ชม., Major ≤24 ชม., Minor ≤1 สัปดาห์」</div>
+            <div class="q-link">หลักสูตร: <strong>M3</strong>, SK5, EoC Logbook</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N8 Training and SOP</div>
+            <div class="q-text">「Workshop + Assessment + User Guide บน Notion/Confluence」</div>
+            <div class="q-link">หลักสูตร: <strong>M4</strong>, SK8, Showcase materials</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N9 Impact KPI</div>
+            <div class="q-text">「Task Time ↓≥30%, Quality ≥4.0, Adoption ≥80%, Override Rate ≤25%」</div>
+            <div class="q-link">หลักสูตร: <strong>M4</strong>, SK8, Stakeholder Impact Brief</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N10 Critical Thinking</div>
+            <div class="q-text">「Confidence threshold, Edge case, Adversarial testing — ไม่ยอม deploy เมื่อ AI มั่นใจแต่ผิด」</div>
+            <div class="q-link">หลักสูตร: <strong>M1, M3</strong>, SK1/SK6, test suite ≥5 ชุด</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N11 Ethics and Governance</div>
+            <div class="q-text">「รู้ว่าเมื่อไหร่ ทำแบบนี้ไม่ได้ — EU AI Act, ASEAN Guideline, Bias detection」</div>
+            <div class="q-link">หลักสูตร: <strong>M2–M3</strong>, SK6, AI Risk Memo 6 มิติ, กรณี HR</div>
+          </div>
+          <div class="quote-card">
+            <div class="q-id">N12 Agentic Accountability</div>
+            <div class="q-text">「เตรียม AI audit framework, อธิบายระบบได้ว่า AI ตัดสินใจบนอะไร」</div>
+            <div class="q-link">หลักสูตร: <strong>M4 สป.22</strong>, SK8, Demo Day Defense</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Heatmap -->
+      <section>
+        <div class="section-title">แผนที่ความหนาแน่น: Need ฝังในโมดูลใด (✓ = มีกิจกรรมและผลงานวัดได้)</div>
+        <div class="heatmap-wrap mapping-wrap">
+          <table class="heatmap">
+            <thead>
+              <tr>
+                <th>Need</th>
+                <th>M1<br>Design</th>
+                <th>M2<br>MVP</th>
+                <th>M3<br>AI+QA</th>
+                <th>M4<br>Launch</th>
+                <th>Gate / Deliverable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="need-label">N1 Process Mapping</td><td class="on">✓</td><td class="off">—</td><td class="off">—</td><td class="off">—</td><td>Gate 1, AS-IS/TO-BE</td></tr>
+              <tr><td class="need-label">N2 Task Allocation</td><td class="on">✓</td><td class="off">—</td><td class="off">—</td><td class="off">—</td><td>Gate 1, Workflow Brief</td></tr>
+              <tr><td class="need-label">N3 HITL</td><td class="on">✓</td><td class="off">—</td><td class="on">✓</td><td class="off">—</td><td>Gate 1, 3, Risk Memo</td></tr>
+              <tr><td class="need-label">N4 Prompt Engineering</td><td class="on">✓</td><td class="on">✓</td><td class="off">—</td><td class="off">—</td><td>Prompt log</td></tr>
+              <tr><td class="need-label">N5 Multi-Model Eval</td><td class="off">—</td><td class="off">—</td><td class="on">✓</td><td class="off">—</td><td>Gate 3, Eval log</td></tr>
+              <tr><td class="need-label">N6 Quality Monitoring</td><td class="off">—</td><td class="off">—</td><td class="on">✓</td><td class="off">—</td><td>Gate 3, QA log</td></tr>
+              <tr><td class="need-label">N7 Error SLA</td><td class="off">—</td><td class="off">—</td><td class="on">✓</td><td class="off">—</td><td>Gate 3, Logbook</td></tr>
+              <tr><td class="need-label">N8 Training SOP</td><td class="off">—</td><td class="off">—</td><td class="off">—</td><td class="on">✓</td><td>Gate 4, User Guide</td></tr>
+              <tr><td class="need-label">N9 Impact KPI</td><td class="off">—</td><td class="off">—</td><td class="off">—</td><td class="on">✓</td><td>Gate 4, Impact Brief</td></tr>
+              <tr><td class="need-label">N10 Critical Thinking</td><td class="on">✓</td><td class="off">—</td><td class="on">✓</td><td class="off">—</td><td>test suite, ธนาคาร case</td></tr>
+              <tr><td class="need-label">N11 Ethics Governance</td><td class="off">—</td><td class="on">✓</td><td class="on">✓</td><td class="off">—</td><td>Gate 3, Risk Memo</td></tr>
+              <tr><td class="need-label">N12 Audit Accountability</td><td class="off">—</td><td class="off">—</td><td class="off">—</td><td class="on">✓</td><td>Gate 4, Showcase Defense</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 4 pillars -->
+      <section>
+        <div class="section-title">4 เสาหลักจากสัมภาษณ์ → โครงสร้างหลักสูตร</div>
+        <div class="pillars">
+          <div class="pillar p-understand">
+            <h3>1. Understand</h3>
+            <p class="needs">N1 Process Mapping</p>
+            <ul>
+              <li>Hackathon-Driven สัปดาห์ 1</li>
+              <li>UX Design Thinking</li>
+              <li>AS-IS Process จาก org จริง</li>
+            </ul>
+          </div>
+          <div class="pillar p-design">
+            <h3>2. Design</h3>
+            <p class="needs">N2 Task Allocation, N3 HITL</p>
+            <ul>
+              <li>Human-AI Workflow Brief</li>
+              <li>Task Allocation Matrix 4 ด้าน</li>
+              <li>จุดตรวจทานเมื่องานเสี่ยงสูง</li>
+            </ul>
+          </div>
+          <div class="pillar p-build">
+            <h3>3. Build and Assure</h3>
+            <p class="needs">N4–N7, N10</p>
+            <ul>
+              <li>Full-stack MVP deploy จริง</li>
+              <li>Prompt Engineering, Multi-Model Eval</li>
+              <li>QA Monitoring, Error SLA</li>
+            </ul>
+          </div>
+          <div class="pillar p-govern">
+            <h3>4. Govern</h3>
+            <p class="needs">N8–N9, N11–N12</p>
+            <ul>
+              <li>AI Risk and Governance Memo</li>
+              <li>Impact Brief KPI 4 ตัว</li>
+              <li>Demo Day, Audit readiness</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mapping table -->
+      <section>
+        <div class="section-title">ตารางเชื่อมโยง: ความต้องการอุตสาหกรรม → หลักสูตรแกนกลาง</div>
+        <div class="mapping-wrap">
+          <table class="mapping">
+            <thead>
+              <tr>
+                <th style="width:14%">Need</th>
+                <th style="width:24%">หลักฐานจากสัมภาษณ์ (ต้นฉบับ)</th>
+                <th style="width:8%">โมดูล</th>
+                <th style="width:7%">SK</th>
+                <th style="width:8%">สป./Gate</th>
+                <th style="width:22%">ผลงานในหลักสูตร</th>
+                <th style="width:17%">SPLO / PLO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tag tag-need">N1</span> Process Mapping</td>
+                <td>ใช้ Miro/FigJam วาด workflow diagram ก่อนออกแบบระบบ</td>
+                <td><span class="tag tag-mod">M1</span></td>
+                <td><span class="tag tag-sk">SK1</span></td>
+                <td class="col-gate">สป.3–6<br>Gate 1</td>
+                <td>Persona, Journey, AS-IS/TO-BE diagram</td>
+                <td>SPLO 1.1, PLO 1</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N2</span> Task Allocation</td>
+                <td>Task Allocation Matrix 4 ด้าน: Complexity, Risk, Data Sensitivity, Judgment</td>
+                <td><span class="tag tag-mod">M1</span></td>
+                <td><span class="tag tag-sk">SK2</span></td>
+                <td class="col-gate">สป.5–6<br>Gate 1</td>
+                <td><span class="tag tag-del">Human-AI Workflow Brief</span></td>
+                <td>SPLO 1.1, C1, C4</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N3</span> HITL</td>
+                <td>Risk/Judgment สูง → HITL ทุกครั้ง, ตรวจสอบเป็นหน้าที่จริง ไม่ใช่พิธีกรรม</td>
+                <td><span class="tag tag-mod">M1, M3</span></td>
+                <td><span class="tag tag-sk">SK2, SK6</span></td>
+                <td class="col-gate">สป.5–6, 14<br>Gate 1, 3</td>
+                <td>HITL ใน Brief, กรณีธนาคารสินเชื่อ</td>
+                <td>SPLO 1.1, 2.3, C4</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N4</span> Prompt Engineering</td>
+                <td>5 องค์ประกอบ: Role, Context, Task, Format, Constraints</td>
+                <td><span class="tag tag-mod">M1, M2</span></td>
+                <td><span class="tag tag-sk">SK4</span></td>
+                <td class="col-gate">สป.4–10</td>
+                <td>Prompt log ใน Design-Ready / MVP</td>
+                <td>SPLO 1.3, C2</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N5</span> Multi-Model Eval</td>
+                <td>ทดสอบ GPT-4o, Claude, Gemini ด้วย test case 20 ชุด</td>
+                <td><span class="tag tag-mod">M3</span></td>
+                <td><span class="tag tag-sk">SK4, SK5</span></td>
+                <td class="col-gate">สป.12<br>Gate 3</td>
+                <td>AI Quality Log, เปรียบเทียบ ≥ 3 models</td>
+                <td>SPLO 1.3, C2</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N6</span> Quality Monitoring</td>
+                <td>สุ่มตรวจ ≥10% output/วัน ด้วย QA Checklist 8 ข้อ</td>
+                <td><span class="tag tag-mod">M3</span></td>
+                <td><span class="tag tag-sk">SK5</span></td>
+                <td class="col-gate">สป.13–15<br>Gate 3</td>
+                <td>QA log สุ่มตรวจ ≥ 10% sample</td>
+                <td>SPLO 1.3, C3</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N7</span> Error SLA</td>
+                <td>Critical ≤2 ชม., Major ≤24 ชม., Minor ≤1 สัปดาห์</td>
+                <td><span class="tag tag-mod">M3</span></td>
+                <td><span class="tag tag-sk">SK5</span></td>
+                <td class="col-gate">สป.13–15</td>
+                <td>Log ใน repo / EoC Logbook</td>
+                <td>SPLO 1.3, C3</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N8</span> Training SOP</td>
+                <td>Workshop + Assessment + User Guide บน Notion/Confluence</td>
+                <td><span class="tag tag-mod">M4</span></td>
+                <td><span class="tag tag-sk">SK8</span></td>
+                <td class="col-gate">สป.17–21</td>
+                <td>Impact Brief, Showcase materials</td>
+                <td>SPLO 2.4, C7</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N9</span> Impact KPI</td>
+                <td>Task Time ↓≥30%, Quality ≥4.0, Adoption ≥80%, Override ≤25%</td>
+                <td><span class="tag tag-mod">M4</span></td>
+                <td><span class="tag tag-sk">SK8</span></td>
+                <td class="col-gate">สป.20–22<br>Gate 4</td>
+                <td><span class="tag tag-del">Stakeholder Impact Brief</span></td>
+                <td>SPLO 1.4, 2.4, C7</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N10</span> Critical Thinking</td>
+                <td>Confidence threshold, Edge case, Adversarial testing</td>
+                <td><span class="tag tag-mod">M1, M3</span></td>
+                <td><span class="tag tag-sk">SK1, SK6</span></td>
+                <td class="col-gate">สป.6, 12–14</td>
+                <td>บันทึกใน Risk Memo / test suite ≥5 ชุด</td>
+                <td>SPLO 2.3, C5</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N11</span> Ethics Governance</td>
+                <td>รู้เมื่อ「ทำแบบนี้ไม่ได้」, EU AI Act, ASEAN Guideline, Bias</td>
+                <td><span class="tag tag-mod">M2, M3</span></td>
+                <td><span class="tag tag-sk">SK6</span></td>
+                <td class="col-gate">สป.14<br>Governance debrief</td>
+                <td><span class="tag tag-del">AI Risk Memo</span> ครบ 6 มิติ, กรณี HR</td>
+                <td>SPLO 2.3, C6</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-need">N12</span> Audit Accountability</td>
+                <td>เตรียม AI audit framework, อธิบายระบบ AI ได้</td>
+                <td><span class="tag tag-mod">M4</span></td>
+                <td><span class="tag tag-sk">SK8</span></td>
+                <td class="col-gate">สป.22<br>Demo Day</td>
+                <td>Defense ต่อ Industry Panel</td>
+                <td>SPLO 1.4, 2.4, C8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Modules + cases -->
+      <div class="bottom-grid">
+        <section class="card">
+          <h2>โครงสร้าง 4 โมดูล (285 ชม.)</h2>
+          <div class="modules">
+            <div class="mod-row">
+              <div class="mod-id">M1</div>
+              <div>
+                <strong>Hackathon-Driven + วิเคราะห์และออกแบบ (สป. 1–6, 88 ชม.)</strong>
+                <span>Hackathon Onsite สป.1, Design Thinking × Process Workflow, โจทย์ org จริง</span>
+              </div>
+              <span class="mod-out">Design-Ready</span>
+            </div>
+            <div class="mod-row">
+              <div class="mod-id m2">M2</div>
+              <div>
+                <strong>พัฒนา MVP Full-stack (สป. 7–10, 58 ชม.)</strong>
+                <span>Spec.md, Auth, CRUD, deploy URL จริง, AI-assisted coding</span>
+              </div>
+              <span class="mod-out">MVP-Ready</span>
+            </div>
+            <div class="mod-row">
+              <div class="mod-id m3">M3</div>
+              <div>
+                <strong>ผสาน AI และควบคุมคุณภาพ (สป. 11–16, 92 ชม.)</strong>
+                <span>AI feature, Dashboard, QA monitoring, Governance debrief</span>
+              </div>
+              <span class="mod-out">AI-Integrated</span>
+            </div>
+            <div class="mod-row">
+              <div class="mod-id m4">M4</div>
+              <div>
+                <strong>ส่งมอบและนำเสนอ (สป. 17–22, 47 ชม.)</strong>
+                <span>Production deploy, UAT, Impact Brief, Demo Day</span>
+              </div>
+              <span class="mod-out">Launch-Ready</span>
+            </div>
+          </div>
+          <div class="sk-grid">
+            <div class="sk-item"><b>SK1</b> วิเคราะห์ปัญหาและผู้ใช้ → C1</div>
+            <div class="sk-item"><b>SK2</b> Workflow มนุษย์–AI → C1, C4</div>
+            <div class="sk-item"><b>SK3</b> Web Full-stack → Build</div>
+            <div class="sk-item"><b>SK4</b> ฝัง AI ในระบบ → C2</div>
+            <div class="sk-item"><b>SK5</b> ควบคุมคุณภาพ AI → C3</div>
+            <div class="sk-item"><b>SK6</b> จริยธรรมและ Risk Memo → C5, C6</div>
+            <div class="sk-item"><b>SK7</b> Cohort Agile → C7</div>
+            <div class="sk-item"><b>SK8</b> สื่อสารผลกระทบ → C7, C8</div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>กรณีศึกษาจากสัมภาษณ์ → ใช้ในชั้นเรียน</h2>
+          <div class="cases">
+            <div class="case">
+              <strong>ธนาคาร — AI สรุปสินเชื่อ ตัวเลขผิด</strong>
+              M1 สป.6, M3, สะท้อน N3, N10 — ต้องมี HITL และ confidence threshold, ไม่เชื่อ AI มั่นใจเมื่อผิด
+            </div>
+            <div class="case">
+              <strong>HR — AI คัดกรองใบสมัคร</strong>
+              M3, สะท้อน N11 — 「ทำแบบนี้ไม่ได้」 AI สรุป แต่ HR ตัดสินใจ
+            </div>
+            <div class="case">
+              <strong>อนาคต Agentic AI</strong>
+              M4, สะท้อน N12 — accountability เมื่อ AI ตัดสินใจหลายขั้น
+            </div>
+          </div>
+
+          <h2 style="margin-top:1rem">วิธีเรียนและภาคี</h2>
+          <ul style="list-style:none;font-size:0.78rem;display:grid;gap:0.4rem;margin-top:0.5rem">
+            <li>→ <strong>Hackathon-Driven สป. 1</strong> — Onsite, Individual Launch Pitch, โจทย์ org ต้นสังกัด</li>
+            <li>→ <strong>Flipped Skill Set</strong> 60 ชม. (อาจารย์ + คู่มือ SK)</li>
+            <li>→ <strong>Org Capstone</strong> 165 ชม. (build/deploy บนบริบท org ทุกสัปดาห์)</li>
+            <li>→ <strong>Clinic และ Gate</strong> 60 ชม. (mentor หอการค้าจังหวัด)</li>
+            <li>→ โจทย์จากเครือข่ายหอการค้าและ org ต้นสังกัดผู้เรียน</li>
+          </ul>
+
+          <div style="margin-top:0.85rem;padding:0.65rem 0.75rem;border-radius:8px;background:var(--green-soft);border:1px solid #86efac;font-size:0.8rem">
+            <strong>ผลลัพธ์:</strong> โซลูชันดิจิทัลที่ใช้งานได้จริงบนบริบท org (Production deploy + UAT) และ Credential AI Collaboration Developer — Demo Day rubric ≥ 70%
+          </div>
+        </section>
+      </div>
+
+      <!-- C1-C8 bridge -->
+      <section>
+        <div class="section-title">สมรรถนะจากสัมภาษณ์ (C1–C8) → Skill Set หลักสูตร (SK1–SK8)</div>
+        <div class="mapping-wrap">
+          <table class="comp-bridge">
+            <thead>
+              <tr>
+                <th>สมรรถนะอุตสาหกรรม</th>
+                <th>Needs ที่สนับสนุน</th>
+                <th>SK ในหลักสูตร</th>
+                <th>โมดูล / Gate</th>
+                <th>หลักฐานที่ mentor ตรวจ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>C1</strong> AI-Augmented Workflow Design</td>
+                <td>N1, N2, N3</td>
+                <td>SK1, SK2</td>
+                <td>M1, Gate 1</td>
+                <td>Human-AI Workflow Brief, Design-Ready</td>
+              </tr>
+              <tr>
+                <td><strong>C2</strong> Prompt Engineering and Model Evaluation</td>
+                <td>N4, N5</td>
+                <td>SK4</td>
+                <td>M2–M3, Gate 3</td>
+                <td>Prompt log, Eval matrix ≥3 models</td>
+              </tr>
+              <tr>
+                <td><strong>C3</strong> AI Quality Assurance</td>
+                <td>N6, N7</td>
+                <td>SK5</td>
+                <td>M3, Gate 3</td>
+                <td>QA log, error classification</td>
+              </tr>
+              <tr>
+                <td><strong>C4</strong> Human-AI Task Allocation</td>
+                <td>N2, N3</td>
+                <td>SK2</td>
+                <td>M1, Gate 1</td>
+                <td>Task Allocation Matrix ใน Brief</td>
+              </tr>
+              <tr>
+                <td><strong>C5</strong> Critical Thinking for AI</td>
+                <td>N10</td>
+                <td>SK1, SK6</td>
+                <td>M1, M3</td>
+                <td>Edge case test suite, ธนาคาร case</td>
+              </tr>
+              <tr>
+                <td><strong>C6</strong> AI Ethics and Governance</td>
+                <td>N11</td>
+                <td>SK6</td>
+                <td>M3, สป.14</td>
+                <td>AI Risk Memo 6 มิติ, กรณี HR</td>
+              </tr>
+              <tr>
+                <td><strong>C7</strong> Stakeholder Communication</td>
+                <td>N8, N9</td>
+                <td>SK7, SK8</td>
+                <td>M4, Gate 4</td>
+                <td>Impact Brief KPI 4 ตัว</td>
+              </tr>
+              <tr>
+                <td><strong>C8</strong> AI Audit and Accountability</td>
+                <td>N12</td>
+                <td>SK8</td>
+                <td>M4, Demo Day</td>
+                <td>Defense อธิบายระบบ AI ต่อกรรมการ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>มหาวิทยาลัยแม่ฟ้าหลวง, Lead Consortium Human2 กลุ่ม 4.7</span>
+      <span>อ้างอิง: ADT-RAISE-NonDegree-2-19June · อัปเดต PLO/SPLO 20 มิ.ย. 2569 · WS01 Stakeholder Needs, Proposal Industry Aligned</span>
+    </footer>
+  </div>
+</body>
+</html>
