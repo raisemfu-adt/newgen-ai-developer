@@ -704,7 +704,7 @@
       <div class="hackathon-banner">
         <span class="hackathon-tag">Hackathon-Driven</span>
         <p>
-          <strong>สป. 1 เปิดรุ่นด้วย Hackathon Onsite</strong> — ผู้เรียนนำเสนอ Individual Launch Pitch โจทย์จาก org ต้นสังกัด รับ feedback จาก mentor หอการค้าจังหวัด แล้วขับเคลื่อน Org Capstone 22 สัปดาห์จนส่งมอบ<strong>โซลูชันดิจิทัลที่ deploy ได้จริง</strong> (MVP URL → Production → Demo Day)
+          <strong>สป. 1 เปิดรุ่นด้วย Hackathon Onsite</strong> — ผู้เรียนนำเสนอ Individual Launch Pitch โจทย์จาก org ต้นสังกัด รับ feedback จากทีมพี่เลี้ยง (ทีมผู้สอน + วิทยากรผู้เชี่ยวชาญ) แล้วขับเคลื่อน Org Capstone 22 สัปดาห์จนส่งมอบ<strong>โซลูชันดิจิทัลที่ deploy ได้จริง</strong> (MVP URL → Production → Demo Day)
         </p>
       </div>
       <div class="plo-section">
@@ -747,7 +747,7 @@
           <div class="ped-item featured">
             <div class="ped-label">จุดเริ่มต้น</div>
             <strong>Hackathon สป. 1</strong>
-            <span>Onsite, Individual Launch Pitch, โจทย์ org จริง, mentor Q&amp;A, Problem Statement</span>
+            <span>Onsite, Individual Launch Pitch, โจทย์ org จริง, พี่เลี้ยง Q&amp;A, Problem Statement</span>
           </div>
           <div class="ped-item">
             <div class="ped-label">60 ชม.</div>
@@ -762,7 +762,7 @@
           <div class="ped-item">
             <div class="ped-label">60 ชม.</div>
             <strong>Clinic และ Gate</strong>
-            <span>mentor หอการค้าจังหวัด ตรวจงาน 4 ครั้ง ก่อน Credential</span>
+            <span>ทีมพี่เลี้ยง (ทีมผู้สอน+วิทยากร) ตรวจ Gate 1–3 · กรรมการภาคอุตสาหกรรม (หอการค้า) ตัดสิน Demo Day</span>
           </div>
         </div>
       </section>
@@ -785,9 +785,9 @@
             <div class="chain-flow">
               <span class="chain-node need">Needs อุตสาหกรรม<br>N1–N12</span>
               <span class="chain-arrow">→</span>
-              <span class="chain-node comp">สมรรถนะ<br>C1–C8</span>
+              <span class="chain-node comp">ทักษะ<br>SK1–SK8</span>
               <span class="chain-arrow">→</span>
-              <span class="chain-node mod">4 โมดูล<br>SK1–SK8</span>
+              <span class="chain-node mod">4 โมดูล<br>M1–M4</span>
               <span class="chain-arrow">→</span>
               <span class="chain-node out">PLO วัดได้<br>+ Credential</span>
             </div>
@@ -860,15 +860,15 @@ flowchart LR
 
   INT["สัมภาษณ์อุตสาหกรรม<br/>AI Collaboration Specialist"]
   NEED["Needs N1-N12"]
-  C["สมรรถนะ C1-C8"]
-  MOD["4 โมดูล M1-M4<br/>SK1-SK8"]
+  SK["ทักษะ SK1-SK8"]
+  MOD["4 โมดูล M1-M4"]
   GATE["Gate 4 ขั้น<br/>rubric ≥ 70%"]
   ART["หลักฐาน<br/>Workflow Brief, MVP URL<br/>QA Log, Risk Memo<br/>Impact Brief"]
 
-  INT --> NEED --> C --> MOD --> GATE --> ART
+  INT --> NEED --> SK --> MOD --> GATE --> ART
 
   class INT,NEED n
-  class C plo
+  class SK plo
   class MOD,GATE mid
   class ART art
           </pre>
@@ -1051,7 +1051,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK2</span></td>
                 <td class="col-gate">สป.5–6<br>Gate 1</td>
                 <td><span class="tag tag-del">Human-AI Workflow Brief</span></td>
-                <td>SPLO 1.1, C1, C4</td>
+                <td>SPLO 1.1</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N3</span> HITL</td>
@@ -1060,7 +1060,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK2, SK6</span></td>
                 <td class="col-gate">สป.5–6, 14<br>Gate 1, 3</td>
                 <td>HITL ใน Brief, กรณีธนาคารสินเชื่อ</td>
-                <td>SPLO 1.1, 2.3, C4</td>
+                <td>SPLO 1.1, 2.3</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N4</span> Prompt Engineering</td>
@@ -1069,7 +1069,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK4</span></td>
                 <td class="col-gate">สป.4–10</td>
                 <td>Prompt log ใน Design-Ready / MVP</td>
-                <td>SPLO 1.3, C2</td>
+                <td>SPLO 1.3</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N5</span> Multi-Model Eval</td>
@@ -1078,7 +1078,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK4, SK5</span></td>
                 <td class="col-gate">สป.12<br>Gate 3</td>
                 <td>AI Quality Log, เปรียบเทียบ ≥ 3 models</td>
-                <td>SPLO 1.3, C2</td>
+                <td>SPLO 1.3</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N6</span> Quality Monitoring</td>
@@ -1087,7 +1087,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK5</span></td>
                 <td class="col-gate">สป.13–15<br>Gate 3</td>
                 <td>QA log สุ่มตรวจ ≥ 10% sample</td>
-                <td>SPLO 1.3, C3</td>
+                <td>SPLO 1.3</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N7</span> Error SLA</td>
@@ -1096,7 +1096,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK5</span></td>
                 <td class="col-gate">สป.13–15</td>
                 <td>Log ใน repo / EoC Logbook</td>
-                <td>SPLO 1.3, C3</td>
+                <td>SPLO 1.3</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N8</span> Training SOP</td>
@@ -1105,7 +1105,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK8</span></td>
                 <td class="col-gate">สป.17–21</td>
                 <td>Impact Brief, Showcase materials</td>
-                <td>SPLO 2.4, C7</td>
+                <td>SPLO 2.4</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N9</span> Impact KPI</td>
@@ -1114,7 +1114,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK8</span></td>
                 <td class="col-gate">สป.20–22<br>Gate 4</td>
                 <td><span class="tag tag-del">Stakeholder Impact Brief</span></td>
-                <td>SPLO 1.4, 2.4, C7</td>
+                <td>SPLO 1.4, 2.4</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N10</span> Critical Thinking</td>
@@ -1123,7 +1123,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK1, SK6</span></td>
                 <td class="col-gate">สป.6, 12–14</td>
                 <td>บันทึกใน Risk Memo / test suite ≥5 ชุด</td>
-                <td>SPLO 2.3, C5</td>
+                <td>SPLO 2.3</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N11</span> Ethics Governance</td>
@@ -1132,7 +1132,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK6</span></td>
                 <td class="col-gate">สป.14<br>Governance debrief</td>
                 <td><span class="tag tag-del">AI Risk Memo</span> ครบ 6 มิติ, กรณี HR</td>
-                <td>SPLO 2.3, C6</td>
+                <td>SPLO 2.3</td>
               </tr>
               <tr>
                 <td><span class="tag tag-need">N12</span> Audit Accountability</td>
@@ -1141,7 +1141,7 @@ flowchart LR
                 <td><span class="tag tag-sk">SK8</span></td>
                 <td class="col-gate">สป.22<br>Demo Day</td>
                 <td>Defense ต่อ Industry Panel</td>
-                <td>SPLO 1.4, 2.4, C8</td>
+                <td>SPLO 1.4, 2.4</td>
               </tr>
             </tbody>
           </table>
@@ -1187,14 +1187,14 @@ flowchart LR
             </div>
           </div>
           <div class="sk-grid">
-            <div class="sk-item"><b>SK1</b> วิเคราะห์ปัญหาและผู้ใช้ → C1</div>
-            <div class="sk-item"><b>SK2</b> Workflow มนุษย์–AI → C1, C4</div>
-            <div class="sk-item"><b>SK3</b> Web Full-stack → Build</div>
-            <div class="sk-item"><b>SK4</b> ฝัง AI ในระบบ → C2</div>
-            <div class="sk-item"><b>SK5</b> ควบคุมคุณภาพ AI → C3</div>
-            <div class="sk-item"><b>SK6</b> จริยธรรมและ Risk Memo → C5, C6</div>
-            <div class="sk-item"><b>SK7</b> Cohort Agile → C7</div>
-            <div class="sk-item"><b>SK8</b> สื่อสารผลกระทบ → C7, C8</div>
+            <div class="sk-item"><b>SK1</b> วิเคราะห์ปัญหาและผู้ใช้ org จริง</div>
+            <div class="sk-item"><b>SK2</b> Workflow มนุษย์–AI (HITL, Task Allocation)</div>
+            <div class="sk-item"><b>SK3</b> Web Full-stack deploy ได้จริง</div>
+            <div class="sk-item"><b>SK4</b> ฝัง AI ในระบบ (Prompt, Model eval)</div>
+            <div class="sk-item"><b>SK5</b> ควบคุมคุณภาพ AI (QA log)</div>
+            <div class="sk-item"><b>SK6</b> จริยธรรมและ AI Risk Memo 6 มิติ</div>
+            <div class="sk-item"><b>SK7</b> Cohort Agile (Sprint, Peer review)</div>
+            <div class="sk-item"><b>SK8</b> สื่อสารผลกระทบ (Impact Brief, Defense)</div>
           </div>
         </section>
 
@@ -1220,7 +1220,7 @@ flowchart LR
             <li>→ <strong>Hackathon-Driven สป. 1</strong> — Onsite, Individual Launch Pitch, โจทย์ org ต้นสังกัด</li>
             <li>→ <strong>Flipped Skill Set</strong> 60 ชม. (อาจารย์ + คู่มือ SK)</li>
             <li>→ <strong>Org Capstone</strong> 165 ชม. (build/deploy บนบริบท org ทุกสัปดาห์)</li>
-            <li>→ <strong>Clinic และ Gate</strong> 60 ชม. (mentor หอการค้าจังหวัด)</li>
+            <li>→ <strong>Clinic และ Gate</strong> 60 ชม. (ทีมพี่เลี้ยง: ทีมผู้สอน+วิทยากร · กรรมการหอการค้าวัน Demo Day)</li>
             <li>→ โจทย์จากเครือข่ายหอการค้าและ org ต้นสังกัดผู้เรียน</li>
           </ul>
 
@@ -1230,82 +1230,92 @@ flowchart LR
         </section>
       </div>
 
-      <!-- C1-C8 bridge -->
+      <!-- SK1-SK8 framework -->
       <section>
-        <div class="section-title">สมรรถนะจากสัมภาษณ์ (C1–C8) → Skill Set หลักสูตร (SK1–SK8)</div>
+        <div class="section-title">ทักษะหลักสูตร (SK1–SK8) ↔ ความต้องการอุตสาหกรรม (N1–N12)</div>
         <div class="mapping-wrap">
           <table class="comp-bridge">
             <thead>
               <tr>
-                <th>สมรรถนะอุตสาหกรรม</th>
+                <th>ทักษะในหลักสูตร (SK)</th>
                 <th>Needs ที่สนับสนุน</th>
-                <th>SK ในหลักสูตร</th>
                 <th>โมดูล / Gate</th>
-                <th>หลักฐานที่ mentor ตรวจ</th>
+                <th>หลักฐานที่พี่เลี้ยง/กรรมการตรวจ</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>C1</strong> AI-Augmented Workflow Design</td>
-                <td>N1, N2, N3</td>
-                <td>SK1, SK2</td>
+                <td><strong>SK1</strong> วิเคราะห์ปัญหาและผู้ใช้ org จริง</td>
+                <td>N1, N2, N10</td>
                 <td>M1, Gate 1</td>
-                <td>Human-AI Workflow Brief, Design-Ready</td>
+                <td>Persona, Journey, Problem Statement</td>
               </tr>
               <tr>
-                <td><strong>C2</strong> Prompt Engineering and Model Evaluation</td>
+                <td><strong>SK2</strong> ออกแบบ Workflow มนุษย์–AI</td>
+                <td>N2, N3</td>
+                <td>M1, Gate 1</td>
+                <td>Human-AI Workflow Brief, Task Allocation, HITL</td>
+              </tr>
+              <tr>
+                <td><strong>SK3</strong> พัฒนา Web Full-stack ที่ deploy ได้จริง</td>
+                <td>— (Build)</td>
+                <td>M2, Gate 2</td>
+                <td>MVP URL, Auth, CRUD, Spec.md</td>
+              </tr>
+              <tr>
+                <td><strong>SK4</strong> ฝัง AI ในระบบองค์กร</td>
                 <td>N4, N5</td>
-                <td>SK4</td>
                 <td>M2–M3, Gate 3</td>
                 <td>Prompt log, Eval matrix ≥3 models</td>
               </tr>
               <tr>
-                <td><strong>C3</strong> AI Quality Assurance</td>
+                <td><strong>SK5</strong> ควบคุมคุณภาพผลลัพธ์ AI</td>
                 <td>N6, N7</td>
-                <td>SK5</td>
                 <td>M3, Gate 3</td>
                 <td>QA log, error classification</td>
               </tr>
               <tr>
-                <td><strong>C4</strong> Human-AI Task Allocation</td>
-                <td>N2, N3</td>
-                <td>SK2</td>
-                <td>M1, Gate 1</td>
-                <td>Task Allocation Matrix ใน Brief</td>
-              </tr>
-              <tr>
-                <td><strong>C5</strong> Critical Thinking for AI</td>
-                <td>N10</td>
-                <td>SK1, SK6</td>
-                <td>M1, M3</td>
-                <td>Edge case test suite, ธนาคาร case</td>
-              </tr>
-              <tr>
-                <td><strong>C6</strong> AI Ethics and Governance</td>
-                <td>N11</td>
-                <td>SK6</td>
+                <td><strong>SK6</strong> ประเมินความเสี่ยงและจริยธรรม AI</td>
+                <td>N10, N11</td>
                 <td>M3, สป.14</td>
-                <td>AI Risk Memo 6 มิติ, กรณี HR</td>
+                <td>AI Risk Memo 6 มิติ, กรณี HR/ธนาคาร</td>
               </tr>
               <tr>
-                <td><strong>C7</strong> Stakeholder Communication</td>
+                <td><strong>SK7</strong> ทำงานแบบ Cohort Agile</td>
                 <td>N8, N9</td>
-                <td>SK7, SK8</td>
-                <td>M4, Gate 4</td>
-                <td>Impact Brief KPI 4 ตัว</td>
+                <td>M1–M4</td>
+                <td>Cohort Charter, Sprint retro, Peer review</td>
               </tr>
               <tr>
-                <td><strong>C8</strong> AI Audit and Accountability</td>
-                <td>N12</td>
-                <td>SK8</td>
-                <td>M4, Demo Day</td>
-                <td>Defense อธิบายระบบ AI ต่อกรรมการ</td>
+                <td><strong>SK8</strong> สื่อสารผลกระทบ AI</td>
+                <td>N8, N9, N12</td>
+                <td>M4, Gate 4 / Demo Day</td>
+                <td>Impact Brief KPI 4 ตัว, Defense</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-    </main>
+
+      <!-- Certification / RPL / TPQI -->
+      <section>
+        <div class="section-title">การรับรอง · การเทียบโอน · การเทียบเคียงมาตรฐาน</div>
+        <div class="insight-grid">
+          <div class="insight-card">
+            <h2>ใบรับรอง (Credential)</h2>
+            <p style="font-size:0.82rem">ออกโดยสถาบัน ในรูปแบบ <strong>ใบแสดงสมรรถนะ (competency-based transcript)</strong> ระบุทักษะ SK1–SK8 รายข้อที่ตรวจสอบได้ พร้อมเป็น <strong>verifiable digital credential</strong> (badge + ลิงก์ตรวจสอบสาธารณะ) — ได้ใบรับรองเต็มเมื่อผ่าน Gate ครบ 4 ขั้น, มีโซลูชันใช้งานจริง และ AI Risk Memo ครบ 6 มิติ</p>
+          </div>
+          <div class="insight-card">
+            <h2>การเทียบโอน RPL + Coursera</h2>
+            <p style="font-size:0.82rem">ผู้เรียนที่มีความรู้/ประสบการณ์เดิม หรือใบรับรองออนไลน์ เช่น <strong>Coursera / Google Career Certificates</strong> ขอเทียบโอนได้สูงสุด <strong>24 ชม. เฉพาะชั้น A (ทฤษฎี)</strong> · ต้องสัมภาษณ์ยืนยันความเข้าใจ · <strong>นับเป็น WIL ไม่ได้</strong> และไม่เทียบโอน Org Capstone / Gate / Demo Day</p>
+          </div>
+          <div class="insight-card">
+            <h2>เทียบเคียง TPQI <span style="font-size:0.7rem;color:var(--muted)">(ทางเลือก — ไม่บังคับ)</span></h2>
+            <p style="font-size:0.82rem">หลักสูตรเทียบเคียงมาตรฐานอาชีพ TPQI ไว้รองรับ: สายนักพัฒนาซอฟต์แวร์ ระดับ 4 (PLO 1) และ AI Literacy หน่วย 7001–7009 (PLO 2) เปิดทาง <strong>Dual Certificate</strong> ผ่านหน่วยประเมินที่ สคช. รับรอง — เป็นกระบวนการ <strong>แยกต่างหาก</strong> จากการสำเร็จหลักสูตร ผู้ที่ไม่เข้าประเมิน TPQI ยังได้ใบรับรองของสถาบันตามปกติ</p>
+          </div>
+        </div>
+      </section>
+        </main>
 
     <footer>
       <span>มหาวิทยาลัยแม่ฟ้าหลวง, Lead Consortium Human2 กลุ่ม 4.7</span>
